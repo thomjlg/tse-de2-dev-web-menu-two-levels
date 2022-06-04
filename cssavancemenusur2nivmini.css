@@ -1,0 +1,149 @@
+html, body {
+ margin-top: 0;
+ margin-left:0;
+ margin-right:0;
+ margin-bottom:0;
+ font-family: Calibri, sans-serif;
+ color: black;
+ padding-left:0px;
+ padding-right:0px;
+ padding-bottom:0px;
+ padding-top:0px;
+ overflow-x:hidden;
+ background-color: #f2f2f2;
+ }
+body {
+ font-size: 15px;
+ padding-bottom:0;
+ padding-top:0;
+}
+* {
+  margin:0;
+  padding:0;
+  border:0;
+}
+:root {
+  --bleuTSE: #0d5b8e;
+  --rougeTSE:#d22310;
+  --vertTSE:#6fa223;
+}
+
+
+.menu{
+    background-color:var(--rougeTSE);
+    color:white;
+    position:fixed;
+    width:100%;
+    top:0;
+    font-size:17px;
+    line-height:17px;
+    cursor:pointer;
+}
+.menu a{
+    color:white;
+    text-decoration:none;
+}
+.menu:hover #menu-bar{
+    display:block;
+}
+/*.menu:hover + .content{*/
+/*    margin-top:calc(0.5% + 94px) !important;*/
+/*}*/
+/*Mise en forme niveau 1*/
+#menu-bar { /*Mise en forme générale*/
+	position:relative;/*Position selon parent*/
+    width:100%;
+    display:none;
+}
+#menu-bar li {/*Mise en forme premier niveau*/
+	float: left; /*Affichage vers la droite*/
+	position: relative;/*Position selon UL parent*/
+	list-style:none;
+    width:20%;
+    text-align:center;
+    background-color:rgb(255, 255, 255, 0.2);
+}
+#menu-bar a {/*Mise en forme des liens*/
+	display: block;/*Changement pour pouvoir mettre effet de style*/
+    padding:10px 0 10px 0;
+}
+
+#menu-bar .active a{/*Mettre en évidence le bouton accueil*/
+    background-color:var(--rougeTSE);
+}
+#menu-bar li:hover > a {/*Mettre en évidence le bouton survolé*/
+    background-color:var(--rougeTSE);
+    animation-name:onhoverMenuTab;
+    animation-duration:0.5s;
+}
+#menu-bar li.active:hover > a {/*Mettre en évidence le bouton survolé*/
+    
+}
+#menu-bar li ul {/*Mise en forme des liens*/
+	display: none; /*Niveau 2 caché de manière standard*/
+	position: absolute;/*Pour afficher verticalement en dessous*/
+	padding: 0;/*Affichage sans décalage horizontal*/
+	width: 100%;/*Largeur à adapter*/
+    background-color:bar(--rougeTSE);
+}
+
+/*Mise en forme niveau 2*/
+#menu-bar li:hover > ul {/*Affichage niveau2*/
+	display: block; /*Changement pour pouvoir mettre effet de style*/
+    margin-top:0;
+    background-color:var(--rougeTSE);
+    padding:20px 0 20px 0;
+    border-radius:0 0 10px 10px;
+    animation-name:onhoverList;
+    animation-duration:1s;
+    height:auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+#menu-bar li ul a:hover {/*Mise en forme des liens*/
+
+}
+#menu-bar li ul li {/*Mise en forme niveau2*/
+    float:none;
+    width:100%;
+}
+#menu-bar li ul a {/*Mise en forme des liens niveau2*/
+}
+
+@keyframes onhoverList {
+    from {background-color:#176073;}
+    to {background-color:var(--rougeTSE);}
+}
+@keyframes onhoverMenuTab {
+    from {background-color:rgb(255, 255, 255, 0.2);}
+    to {background-color:var(--rougeTSE);}
+}
+
+.content{
+    font-size:15px;
+    text-indent:20px;
+    margin-top:calc(0.5% + 57px);
+}
+.content p{
+    padding:0.5%;
+}
+
+.titre{
+    width:100%;
+    padding:1.5%;
+    font-size:25px;
+    font-weight:bold;
+    text-align:center;
+}
+p i{
+    color:var(--rougeTSE);
+}
+p i:first-child{
+    color:var(--bleuTSE);
+}
+p i:last-child{
+    color:var(--vertTSE);
+}
+.tips{
+    font-size:15px;
+}
